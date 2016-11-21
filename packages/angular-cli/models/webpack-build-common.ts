@@ -56,13 +56,11 @@ export function getWebpackCommonConfig(
         {
           exclude: styles,
           test: /\.css$/,
-          loaders: ['raw-loader', 'postcss-loader'],
-          loader: "style-loader!css-loader?root=/static/beta/"
+          loaders: ['raw-loader', 'postcss-loader']
         }, {
           exclude: styles,
           test: /\.styl$/,
-          loaders: ['raw-loader', 'postcss-loader', 'stylus-loader'],
-          loader: "style-loader!css-loader?root=/static/beta/"
+          loaders: ['raw-loader', 'postcss-loader', 'stylus-loader']
         },
         {
           exclude: styles,
@@ -71,7 +69,6 @@ export function getWebpackCommonConfig(
         }, {
           exclude: styles,
           test: /\.scss$|\.sass$/,
-          loaders: ['raw-loader', 'postcss-loader', 'sass-loader'],
           loader: "style-loader!css-loader?root=/static/beta/"
         },
 
@@ -79,23 +76,19 @@ export function getWebpackCommonConfig(
         {
           include: styles,
           test: /\.css$/,
-          // loaders: ['style-loader', 'css-loader', 'postcss-loader'],
           loader: "style-loader!css-loader!postcss-loader?root=/static/beta/"
 
         }, {
           include: styles,
           test: /\.styl$/,
-          // loaders: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader'],
           loader: "style-loader!css-loader!postcss-loader!stylus-loader?root=/static/beta/"
         }, {
           include: styles,
           test: /\.less$/,
-          loaders: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
           loader: "style-loader!css-loader?root=/static/beta/"
         }, {
           include: styles,
           test: /\.scss$|\.sass$/,
-          loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
           loader: "style-loader!css-loader?root=/static/beta/"
         },
 
