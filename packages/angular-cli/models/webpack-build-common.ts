@@ -75,11 +75,11 @@ export function getWebpackCommonConfig(
         {
           include: styles,
           test: /\.css$/,
-          loaders: ['style-loader', 'css-loader', 'postcss-loader?root=/static/beta/']
+          loaders: ['style-loader', 'css-loader?root=/static/beta/', 'postcss-loader']
         }, {
           include: styles,
           test: /\.styl$/,
-          loaders: ['style-loader', 'css-loader', 'postcss-loader?root=/static/beta/', 'stylus-loader']
+          loaders: ['style-loader', 'css-loader?root=/static/beta/', 'postcss-loader', 'stylus-loader']
         }, {
           include: styles,
           test: /\.less$/,
@@ -87,7 +87,7 @@ export function getWebpackCommonConfig(
         }, {
           include: styles,
           test: /\.scss$|\.sass$/,
-          loaders: ['style-loader', 'css-loader', 'postcss-loader?root=/static/beta/', 'sass-loader']
+          loaders: ['style-loader', 'css-loader?root=/static/beta/', 'postcss-loader', 'sass-loader']
         },
 
         // load global scripts using script-loader
