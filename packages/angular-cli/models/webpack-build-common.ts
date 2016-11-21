@@ -56,11 +56,14 @@ export function getWebpackCommonConfig(
         {
           exclude: styles,
           test: /\.css$/,
-          loaders: ['raw-loader', 'postcss-loader']
+          loaders: ['raw-loader', 'postcss-loader'],
+          loader: "style-loader!css-loader?root=/static/beta/"
         }, {
           exclude: styles,
           test: /\.styl$/,
-          loaders: ['raw-loader', 'postcss-loader', 'stylus-loader'] },
+          loaders: ['raw-loader', 'postcss-loader', 'stylus-loader'],
+          loader: "style-loader!css-loader?root=/static/beta/"
+        },
         {
           exclude: styles,
           test: /\.less$/,
@@ -68,26 +71,32 @@ export function getWebpackCommonConfig(
         }, {
           exclude: styles,
           test: /\.scss$|\.sass$/,
-          loaders: ['raw-loader', 'postcss-loader', 'sass-loader']
+          loaders: ['raw-loader', 'postcss-loader', 'sass-loader'],
+          loader: "style-loader!css-loader?root=/static/beta/"
         },
 
         // outside of main, load it via style-loader
         {
           include: styles,
           test: /\.css$/,
-          loaders: ['style-loader', 'css-loader', 'postcss-loader']
+          // loaders: ['style-loader', 'css-loader', 'postcss-loader'],
+          loader: "style-loader!css-loader!postcss-loader?root=/static/beta/"
+
         }, {
           include: styles,
           test: /\.styl$/,
-          loaders: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader']
+          // loaders: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader'],
+          loader: "style-loader!css-loader!postcss-loader!stylus-loader?root=/static/beta/"
         }, {
           include: styles,
           test: /\.less$/,
-          loaders: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
+          loaders: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+          loader: "style-loader!css-loader?root=/static/beta/"
         }, {
           include: styles,
           test: /\.scss$|\.sass$/,
-          loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+          loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+          loader: "style-loader!css-loader?root=/static/beta/"
         },
 
         // load global scripts using script-loader
