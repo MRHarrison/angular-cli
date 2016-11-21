@@ -22,6 +22,27 @@ export const getWebpackProdConfigPartial = function(projectRoot: string, appConf
       sourceMapFilename: '[name].[chunkhash].bundle.map',
       chunkFilename: '[id].[chunkhash].chunk.js'
     },
+    module: {
+      loaders: [        {
+          test: /\.woff$/,
+          // Inline small woff files and output them below font/.
+          // Set mimetype just in case.
+          loader: 'url',
+          query: {
+            name: '/static/dist/[name].[ext]',
+            limit: 5000,
+            mimetype: 'application/font-woff'
+          }
+        },
+        {
+          test: /\.ttf$|\.eot$/,
+          loader: 'file',
+          query: {
+            name: '/static/dist/[name].[ext]'
+          }
+        },
+      ]
+    },
     plugins: [
       new WebpackMd5Hash(),
       new webpack.DefinePlugin({
