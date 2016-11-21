@@ -56,7 +56,7 @@ export function getWebpackCommonConfig(
         {
           exclude: styles,
           test: /\.css$/,
-          loaders: ['raw-loader', 'postcss-loader']
+          loaders: ['raw-loader', 'css-loader?root=/static/beta/', 'postcss-loader']
         }, {
           exclude: styles,
           test: /\.styl$/,
