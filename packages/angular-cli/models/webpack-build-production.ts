@@ -18,7 +18,7 @@ export const getWebpackProdConfigPartial = function(projectRoot: string, appConf
     devtool: 'source-map',
     output: {
       path: path.resolve(projectRoot, appConfig.outDir),
-      publicPath: '/static/dist/',
+      publicPath: appConfig.assetDir || '',
       filename: '[name].[chunkhash].bundle.js',
       sourceMapFilename: '[name].[chunkhash].bundle.map',
       chunkFilename: '[id].[chunkhash].chunk.js'
