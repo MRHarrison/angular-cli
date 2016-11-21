@@ -60,8 +60,7 @@ export function getWebpackCommonConfig(
         }, {
           exclude: styles,
           test: /\.styl$/,
-          loaders: ['raw-loader', 'postcss-loader', 'stylus-loader']
-        },
+          loaders: ['raw-loader', 'postcss-loader', 'stylus-loader'] },
         {
           exclude: styles,
           test: /\.less$/,
@@ -69,27 +68,26 @@ export function getWebpackCommonConfig(
         }, {
           exclude: styles,
           test: /\.scss$|\.sass$/,
-          loader: "style-loader!css-loader?root=/static/beta/"
+          loaders: ['raw-loader', 'postcss-loader', 'sass-loader']
         },
 
         // outside of main, load it via style-loader
         {
           include: styles,
           test: /\.css$/,
-          loader: "style-loader!css-loader!postcss-loader?root=/static/beta/"
-
+          loaders: ['style-loader', 'css-loader', 'postcss-loader?root=/static/beta/']
         }, {
           include: styles,
           test: /\.styl$/,
-          loader: "style-loader!css-loader!postcss-loader!stylus-loader?root=/static/beta/"
+          loaders: ['style-loader', 'css-loader', 'postcss-loader?root=/static/beta/', 'stylus-loader']
         }, {
           include: styles,
           test: /\.less$/,
-          loader: "style-loader!css-loader?root=/static/beta/"
+          loaders: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
         }, {
           include: styles,
           test: /\.scss$|\.sass$/,
-          loader: "style-loader!css-loader?root=/static/beta/"
+          loaders: ['style-loader', 'css-loader', 'postcss-loader?root=/static/beta/', 'sass-loader']
         },
 
         // load global scripts using script-loader
