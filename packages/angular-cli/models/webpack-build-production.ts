@@ -14,11 +14,13 @@ declare module 'webpack' {
 }
 
 export const getWebpackProdConfigPartial = function(projectRoot: string, appConfig: any) {
+  console.log('appConfig.assetDir');
+  console.log(appConfig.assetDir);
   return {
     devtool: 'source-map',
     output: {
       path: path.resolve(projectRoot, appConfig.outDir),
-      publicPath: appConfig.assetDir || '',
+      publicPath: '/static/dist/',
       filename: '[name].[chunkhash].bundle.js',
       sourceMapFilename: '[name].[chunkhash].bundle.map',
       chunkFilename: '[id].[chunkhash].chunk.js'
