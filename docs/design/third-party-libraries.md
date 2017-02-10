@@ -102,7 +102,7 @@ its `(pre|post|)install` hooks only on packages that are newly installed. It sho
 packages should be kept before performing `npm install`.
 
 # <a name="appData">appData</a>
-The `angular-cli` key in the generated app should be used for `angular-cli` specific data.
+The `angular-cli` key in the generated app should be used for Angular CLI specific data.
 This includes the CLI configuration itself, as well as third-parties library configuration.
 
 Third-parties can store data that will be passed to the app, and can use that data themselves.
@@ -126,7 +126,7 @@ Example:
       "url": {
         "prompt": "URL of your website:",
         "defaultValue": "${homepage}"
-      },
+      }
     }
   }
 }
@@ -196,4 +196,4 @@ a migration hook for `postinstall`.
 # Remaining Problems
 
 1. Installing dependencies of packages need to be further sketched out.
-2. Need to add a full fledged example with Firebase.
+2. Need to add a fully fledged example with Firebase.
